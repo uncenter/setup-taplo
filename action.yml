@@ -20,7 +20,7 @@ runs:
             ;;
           "Windows")
             RUNNER_OS="windows"
-            SUDO="C:\Program Files\taplo\bin\taplo.exe"
+            SUDO="C:\\Program Files\\taplo\\bin\\taplo.exe"
             ;;
           "macOS")
             RUNNER_OS="darwin"
