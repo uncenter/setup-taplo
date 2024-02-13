@@ -1,6 +1,20 @@
 # setup-taplo
 
+Setup [Taplo](https://taplo.tamasfe.dev/) in GitHub Actions.
+
+## Usage
+
 ```yaml
+- uses: uncenter/setup-taplo@v1.0.1
+  with:
+    version: "0.8.1"
+```
+
+## Examples
+
+```yaml
+name: Check formatting
+
 on:
   push:
 
@@ -16,3 +30,7 @@ jobs:
 
       - run: taplo fmt foo.toml --check
 ```
+
+## License
+
+[MIT](LICENSE)
