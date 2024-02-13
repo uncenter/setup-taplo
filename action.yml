@@ -22,7 +22,7 @@ runs:
             RUNNER_OS="windows"
             SUDO=""
             LOCATION="C:\\Program Files\\taplo\\bin\\taplo.exe"
-            mkdir -p "$(dirname $LOCATION)"
+            mkdir -p "C:\\Program Files\\taplo\\bin\\"
             ;;
           "macOS")
             RUNNER_OS="darwin"
