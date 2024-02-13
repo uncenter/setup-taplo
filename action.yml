@@ -1,0 +1,39 @@
+name: "Setup Taplo"
+description: "Install the Taplo CLI"
+inputs:
+  version:
+    description: Version of Taplo to install
+    required: false
+    default: "0.8.1"
+runs:
+  using: "composite"
+  steps:
+    - name: Install Taplo
+      run: |
+        case "${{ runner.os }}" in
+          "Linux")
+            RUNNER_OS="linux"
+            ;;
+          "Windows")
+            RUNNER_OS="windows"
+            ;;
+          "macOS")
+            RUNNER_OS="darwin"
+            ;;
+        esac
+        case "${{ runner.arch }}" in
+          "X86" | "X64")
+            RUNNER_ARCH="x86_64"
+            ;;
+          "ARM64")
+            RUNNER_ARCH="aarch64"
+            ;;
+          *)
+            echo "Unsupported architecture"
+            exit 1
+            ;;
+        esac
+        curl -Ls "https://github.com/tamasfe/taplo/releases/download/${{ inputs.version }}/taplo-full-${RUNNER_OS}-${RUNNER_ARCH}.gz" | \
+        gzip -d > taplo && \
+        chmod +x taplo && \
+        sudo mv taplo /usr/local/bin/taplo
