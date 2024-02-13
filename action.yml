@@ -21,8 +21,12 @@ runs:
           "Windows")
             RUNNER_OS="windows"
             SUDO=""
-            LOCATION="C:\\Program Files\\taplo\\bin\\taplo.exe"
-            mkdir -p "C:\\Program Files\\taplo\\bin\\"
+
+            DIR="C:\\Program Files\\taplo\\bin\\"
+            mkdir -p "$DIR"
+            echo "$DIR" >> $GITHUB_PATH
+
+            LOCATION="${DIR}taplo.exe"
             ;;
           "macOS")
             RUNNER_OS="darwin"
