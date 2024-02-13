@@ -11,18 +11,19 @@ runs:
     - name: Install Taplo
       shell: bash
       run: |
+        SUDO="sudo"
+        LOCATION="/usr/local/bin/taplo"
+
         case "${{ runner.os }}" in
           "Linux")
             RUNNER_OS="linux"
-            SUDO="sudo"
             ;;
           "Windows")
             RUNNER_OS="windows"
-            SUDO=""
+            SUDO="C:\Program Files\taplo\bin\taplo.exe"
             ;;
           "macOS")
             RUNNER_OS="darwin"
-            SUDO="sudo"
             ;;
         esac
         case "${{ runner.arch }}" in
@@ -40,4 +41,4 @@ runs:
         curl -Ls "https://github.com/tamasfe/taplo/releases/download/${{ inputs.version }}/taplo-full-${RUNNER_OS}-${RUNNER_ARCH}.gz" | \
         gzip -d > taplo && \
         chmod +x taplo && \
-        ${SUDO} mv taplo /usr/local/bin/taplo
+        ${SUDO} mv taplo "${LOCATION}"
