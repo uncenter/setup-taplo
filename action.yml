@@ -9,6 +9,7 @@ runs:
   using: "composite"
   steps:
     - name: Install Taplo
+      shell: bash
       run: |
         case "${{ runner.os }}" in
           "Linux")
