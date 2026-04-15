@@ -4,7 +4,7 @@ inputs:
   version:
     description: Version of Taplo to install
     required: false
-    default: "0.8.1"
+    default: "0.10.0"
 runs:
   using: "composite"
   steps:
