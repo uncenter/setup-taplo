@@ -44,7 +44,7 @@ runs:
             exit 1
             ;;
         esac
-        curl -Ls "https://github.com/tamasfe/taplo/releases/download/${{ inputs.version }}/taplo-full-${RUNNER_OS}-${RUNNER_ARCH}.gz" | \
+        curl -Ls "https://github.com/tamasfe/taplo/releases/download/${{ inputs.version }}/taplo-${RUNNER_OS}-${RUNNER_ARCH}.gz" | \
         gzip -d > taplo && \
         chmod +x taplo && \
         ${SUDO} mv taplo "${LOCATION}"
