@@ -31,6 +31,18 @@ jobs:
       - run: taplo fmt foo.toml --check
 ```
 
+## Changelog
+
+### v2
+
+**Compatability**: Taplo >= v0.10.0
+
+With v2, this action is updated to supporting installing Taplo v0.10.0. Use `@v1` to install versions prior to this.
+
+### v1
+
+**Compatability**: Taplo < v0.10.0 (Taplo <= v0.9.3)
+
 ## License
 
 [MIT](LICENSE)
