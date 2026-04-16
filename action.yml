@@ -4,7 +4,7 @@ inputs:
   version:
     description: Version of Taplo to install
     required: false
-    default: "0.8.1"
+    default: "0.10.0"
 runs:
   using: "composite"
   steps:
@@ -44,7 +44,7 @@ runs:
             exit 1
             ;;
         esac
-        curl -Ls "https://github.com/tamasfe/taplo/releases/download/${{ inputs.version }}/taplo-full-${RUNNER_OS}-${RUNNER_ARCH}.gz" | \
+        curl -Ls "https://github.com/tamasfe/taplo/releases/download/${{ inputs.version }}/taplo-${RUNNER_OS}-${RUNNER_ARCH}.gz" | \
         gzip -d > taplo && \
         chmod +x taplo && \
         ${SUDO} mv taplo "${LOCATION}"
